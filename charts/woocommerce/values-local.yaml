@@ -1,0 +1,26 @@
+# charts/woocommerce/values-local.yaml
+
+ingress:
+  enabled: true
+  hostname: woo.local
+  annotations:
+    ingress.kubernetes.io/ssl-redirect: "false"
+
+persistence:
+  enabled: true
+  size: 2Gi
+
+wordpressUsername: admin
+wordpressPassword: adminpassword
+wordpressEmail: admin@example.com
+
+mariadb:
+  primary:
+    persistence:
+      enabled: true
+      size: 2Gi
+  auth:
+    rootPassword: rootpassword
+    database: wordpress
+    username: wp_user
+    password: wp_password
